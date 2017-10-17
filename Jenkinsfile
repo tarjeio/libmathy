@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     stages {
         stage ('Get code') {
             steps {
