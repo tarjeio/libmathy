@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "mathy.h"
+#include "version.h"
 
 int main(const int argc, const char *argv[])
 {
@@ -14,11 +15,9 @@ int main(const int argc, const char *argv[])
         i++;
       }
     }
-
-    printf("7 + 3 = %f\n", Mathy::Calculate::Add(5, 3));
-    printf("7 - 3 = %f\n", Mathy::Calculate::Subtract(5, 3));
-    printf("7 * 3 = %f\n", Mathy::Calculate::Multiply(5, 3));
-    printf("7 / 3 = %f\n", Mathy::Calculate::Divide(5, 3));
+    printf("VERSION_STRING=%s\n", VERSION_STRING);
+    printf("BUILD_STRING=%s\n", BUILD_STRING);
+    printf("PRODUCT_STRING=%s\n", PRODUCT_STRING);
 
     return 0;
 }
