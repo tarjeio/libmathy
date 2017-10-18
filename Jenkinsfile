@@ -3,11 +3,6 @@ pipeline {
         docker { image 'tarjeio/native-make' }
     }
     stages {
-        stage ('Get code') {
-            steps {
-                git "https://github.com/tarjeio/embeddedproject"
-            }
-        }
         stage ('Build') {
             steps {
                 sh "make clean"
