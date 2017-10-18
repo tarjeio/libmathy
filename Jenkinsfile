@@ -19,7 +19,8 @@ pipeline {
         }
         stage ('Publish') {
             steps {
-                archiveArtifacts 'out/bin/main'
+                archiveArtifacts 'out/lib/libmathy.so'
+                archiveArtifacts 'out/lib/libmathy.a'
                 archiveArtifacts 'out/bin/results_junit.xml'
                 junit 'out/bin/results_junit.xml'
                 archiveArtifacts 'build/distributions/*.zip'
