@@ -5,6 +5,11 @@ pipeline {
             args '-v $HOME/.m2:/home/jenkins/.m2 -v $HOME/.gradle:/home/jenkins/.gradle'
         }
     }
+    stage ('Increment version'){
+        steps {
+            sh './gradlew incrementVersion'
+        }
+    }
     stages {
         stage ('Build') {
             steps {
