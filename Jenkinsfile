@@ -1,17 +1,12 @@
 pipeline {
     agent {
-        docker { image 'tarjeio/native-make' }
+        docker { image 'praqma/native-gradle' }
     }
     stages {
         stage ('Build') {
             steps {
                 sh "make clean"
-                sh "make all"
-            }
-        }
-        stage ('Test') {
-            steps {
-                sh "make test"
+                sh "gradlew publishToMavenLocal"
             }
         }
         stage ('Publish') {
@@ -19,6 +14,7 @@ pipeline {
                 archiveArtifacts 'out/bin/main'
                 archiveArtifacts 'out/bin/results_junit.xml'
                 junit 'out/bin/results_junit.xml'
+                archiveArtifacts 'build/distributions/*.zip'
             }
         }
     }
