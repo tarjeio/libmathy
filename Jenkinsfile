@@ -19,7 +19,6 @@ pipeline {
         }
         stage ('Publish') {
             steps {
-                archiveArtifacts 'out/lib/libmathy.so'
                 archiveArtifacts 'out/lib/libmathy.a'
                 archiveArtifacts 'native-app/inc/mathy.h'
                 archiveArtifacts 'out/bin/results_junit.xml'
