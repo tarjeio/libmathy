@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'praqma/native-make' }
+        docker { image 'tarjeio/native-make' }
     }
     stages {
         stage ('Get code') {
