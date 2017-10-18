@@ -8,5 +8,8 @@ buildproperties.publishing {
         into('lib'){
             from 'out/lib'
         }
+        into('inc') {
+            from 'native-app/inc/mathy.h'
+        }
     }
 }
